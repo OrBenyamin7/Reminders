@@ -20,7 +20,7 @@ const TaskDetails = ({task}) => {
 
     const handleEdit = async () => {
         const response = await fetch('/api/tasks/' + task._id, {
-            method: 'UPDATE'
+            method: 'PATCH'
         })
         const json = await response.json()
 
