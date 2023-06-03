@@ -10,6 +10,9 @@ const TaskForm = () => {
     const [error, setError] = useState(null)
     const [emptyFields, setEmptyFields] = useState([])
 
+
+
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
