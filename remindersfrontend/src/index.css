@@ -45,6 +45,8 @@ header a {
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  border: 2px solid #ffffff; /* Update the border property */
+
 }
 .task-details h4 {
   margin: 0 0 10px 0;
