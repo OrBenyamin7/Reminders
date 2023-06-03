@@ -6,7 +6,7 @@ const Navbar = () => {
         <header>
             <div className="container">
                 <Link to="/">
-                    <h1>Reminders</h1>
+                    <h1 className="headLineReminder">Reminders</h1>
                 </Link>
             </div>
         </header>

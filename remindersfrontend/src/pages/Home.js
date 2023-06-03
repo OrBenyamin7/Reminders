@@ -6,7 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import TaskDetails from '../components/TaskDetails';
 import TaskForm from '../components/TaskForm';
 
-const Home = () => {
+const Home = ({ theme }) => {
   const { tasks, dispatch } = useTasksContext();
 
   useEffect(() => {
@@ -29,12 +29,12 @@ const Home = () => {
           <div className="tasks">
             {tasks &&
               tasks.map((task) => (
-                <TaskDetails key={task._id} task={task} />
+                <TaskDetails key={task._id} task={task} theme={theme} />
               ))}
           </div>
         </Col>
         <Col md={4}>
-          <TaskForm />
+          <TaskForm theme={theme} />
         </Col>
       </Row>
     </Container>
