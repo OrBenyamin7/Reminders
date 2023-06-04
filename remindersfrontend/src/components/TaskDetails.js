@@ -19,6 +19,7 @@ const TaskDetails = ({task}) => {
     }
 
     const handleEdit = async () => {
+        /*
         const response = await fetch('/api/tasks/' + task._id, {
             method: 'PATCH'
         })
@@ -27,12 +28,20 @@ const TaskDetails = ({task}) => {
         if (response.ok) {
             dispatch({type: 'UPDATE_TASK', payload: json})
         }
+                    <span className="material-symbols-outlined" onClick={handleDelete}>delete</span>
+
+        */
+       if(task.due_date == null){
+        console.log("null date")
+       }
     }
 
     return (
         <div className="task-details">
             <h4>{task.description}</h4>
-            <p><strong>dueDate: </strong>{formatDistanceToNow(new Date(task.due_date), {addSuffix: true})}</p>
+            {task.due_date !== null && (
+                <p><strong>dueDate: </strong>{formatDistanceToNow(new Date(task.due_date), { addSuffix: true })}</p>
+            )}            
             <p>{formatDistanceToNow(new Date(task.createdAt), {addSuffix: true})}</p>
             <span className="material-symbols-outlined" onClick={handleEdit}>edit</span>
             <span className="material-symbols-outlined" onClick={handleDelete}>delete</span>
