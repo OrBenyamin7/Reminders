@@ -174,3 +174,42 @@ input.error {
   top: 20px;
   right: 20px;
 }
+
+
+
+.headLineEditTask {
+  margin: auto;
+}
+
+.theme-dark .formEditTask {
+  background-color: #585858;
+  color: #f1f1f1;
+}
+
+.theme-light .formEditTask {
+  /* CSS styles for the dark theme */
+  background-color: #ffffff;
+  color: #333;
+}
+
+.description-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Add margin-bottom to create spacing */
+}
+
+.description-input strong {
+  margin-right: 8px;
+  width: 120px; /* Adjust the width to create consistent spacing */
+}
+
+.due-date-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Add margin-bottom to create spacing */
+}
+
+.due-date-input strong {
+  margin-right: 8px;
+  width: 120px; /* Adjust the width to create consistent spacing */
+}
