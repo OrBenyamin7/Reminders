@@ -195,21 +195,21 @@ input.error {
 .description-input {
   display: flex;
   align-items: center;
-  margin-bottom: 20px; /* Add margin-bottom to create spacing */
+  margin-bottom: 20px; 
 }
 
 .description-input strong {
   margin-right: 8px;
-  width: 120px; /* Adjust the width to create consistent spacing */
+  width: 120px; 
 }
 
 .due-date-input {
   display: flex;
   align-items: center;
-  margin-bottom: 20px; /* Add margin-bottom to create spacing */
+  margin-bottom: 20px; 
 }
 
 .due-date-input strong {
   margin-right: 8px;
-  width: 120px; /* Adjust the width to create consistent spacing */
+  width: 120px; 
 }

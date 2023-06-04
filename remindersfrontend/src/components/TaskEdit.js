@@ -42,7 +42,7 @@ const TaskEdit = ({ task, onClose }) => {
           <strong>Due date: </strong>
           <input
             type="Date"
-            defaultValue={editedDueDate ? editedDueDate.slice(0, 10) : ''}
+              defaultValue={editedDueDate ? editedDueDate.slice(0, 10) : ''}
             onChange={handleChangeDueDate}
           />
         </div>
