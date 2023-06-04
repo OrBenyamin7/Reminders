@@ -154,6 +154,7 @@ form button {
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
+  margin: 10px;
 }
 
 div.error {
@@ -212,4 +213,15 @@ input.error {
 .due-date-input strong {
   margin-right: 8px;
   width: 120px; 
+}
+
+.btnEditTask {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 5px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px;
 }

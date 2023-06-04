@@ -2,17 +2,21 @@ import { useState } from 'react'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import TaskEdit from '../components/TaskEdit'
 
+
+
 const TaskDetails = ({ task }) => {
     const [showModal, setShowModal] = useState(false)
 
-
+    
     const handleEdit = () => {
         setShowModal(true)
-    };
+    }
 
     const closeModal = () => {
         setShowModal(false)
-    };
+    }
+
+    
 
     return (
         <div className="task-details">
@@ -31,7 +35,7 @@ const TaskDetails = ({ task }) => {
                 />
             )}
         </div>
-    );
-};
+    )
+}
 
 export default TaskDetails
