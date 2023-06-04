@@ -85,13 +85,24 @@ header a {
 }
 
 .task-details {
-  background: var(--bg-color);
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
   border: 2px solid var(--border-color);
+}
+
+body.theme-dark .task-details {
+  /* CSS styles for the dark theme */
+  background-color: #585858;
+  color: #f1f1f1;
+}
+
+body.theme-light .task-details {
+  /* CSS styles for the dark theme */
+  background-color: #ffffff;
+  color: #333;
 }
 
 .task-details h4 {
