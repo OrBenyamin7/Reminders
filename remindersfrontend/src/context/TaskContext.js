@@ -21,7 +21,6 @@ export const tasksReducer = (state, action) => {
 
         case 'UPDATE_TASK':
 
-            
             return {
                 tasks: state.tasks.map((task) => 
                     task._id === action.payload._id ? action.payload : task
