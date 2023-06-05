@@ -26,12 +26,13 @@ const Home = ({ theme }) => {
     if (user) {
       fetchTasks()
     }
-  }, [dispatch, user])
+ // }, [dispatch, user])
 
 
-    fetchTasks();
+   // fetchTasks();
   //}, [dispatch, tasks]);
 }, [dispatch]);
+
 
 
   return (

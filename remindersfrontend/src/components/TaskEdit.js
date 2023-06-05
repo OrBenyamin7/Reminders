@@ -41,19 +41,15 @@ const TaskEdit = ({ task, onClose }) => {
 }
 
   const handleDelete = async () => {
-    const response = await fetch('/api/tasks/' + task._id, {
-        method: 'DELETE'
-    })
-    const json = await response.json()
+        const response = await fetch('/api/tasks/' + task._id, {
+            method: 'DELETE'
+        })
+        const json = await response.json()
 
-    if (response.ok) {
-        dispatch({type: 'DELETE_TASK', payload: json})
-        console.log('task was delete')
+        if (response.ok) {
+            dispatch({type: 'DELETE_TASK', payload: json})
+        }
     }
-    else{
-        console.error('Failed to delete the task')
-    }
-}
 
   return (
     <div className="modal-overlay">

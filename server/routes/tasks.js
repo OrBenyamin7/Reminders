@@ -14,7 +14,6 @@ const router = express.Router()
 router.use(requireAuth)
 
 
-
 //GET All Reminders
 router.get('/',getTasks)
 
@@ -23,7 +22,6 @@ router.get('/:id',getTask)
 
 //POST a new Reminder
 router.post('/',createTask)
-
 
 //DELETE Reminder
 router.delete('/:id',deleteTask)
