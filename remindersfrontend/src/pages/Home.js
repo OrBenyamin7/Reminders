@@ -17,11 +17,22 @@ const Home = ({ theme }) => {
       if (response.ok) {
         dispatch({ type: 'SET_TASKS', payload: json });
       }
+
     };
 
-    fetchTasks();
+    }
+
+    if (user) {
+      fetchTasks()
+    }
+ // }, [dispatch, user])
+
+
+
+   // fetchTasks();
   //}, [dispatch, tasks]);
 }, [dispatch]);
+
 
   return (
     <Container>

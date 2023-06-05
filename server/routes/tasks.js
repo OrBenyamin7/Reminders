@@ -10,6 +10,11 @@ const {
 const router = express.Router()
 
 
+// require auth for all workout routes
+router.use(requireAuth)
+
+
+
 //GET All Reminders
 router.get('/',getTasks)
 
@@ -18,7 +23,6 @@ router.get('/:id',getTask)
 
 //POST a new Reminder
 router.post('/',createTask)
-
 
 //DELETE Reminder
 router.delete('/:id',deleteTask)
