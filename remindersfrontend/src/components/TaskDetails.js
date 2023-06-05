@@ -7,7 +7,6 @@ import TaskEdit from '../components/TaskEdit'
 const TaskDetails = ({ task }) => {
     const [showModal, setShowModal] = useState(false)
 
-    
     const handleEdit = () => {
         setShowModal(true)
     }

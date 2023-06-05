@@ -30,12 +30,9 @@ const TaskEdit = ({ task, onClose }) => {
 
     const json = await response.json()
 
-    console.log('***********')
-    console.log(json)
-    //console.log(response)
+    
 
     if (response.ok) {
-      console.log('here')
       dispatch({ type: 'UPDATE_TASK', payload: json })
       onClose() 
     } else {

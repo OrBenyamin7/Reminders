@@ -20,7 +20,8 @@ const Home = ({ theme }) => {
     };
 
     fetchTasks();
-  }, [dispatch]);
+  //}, [dispatch, tasks]);
+}, [dispatch]);
 
   return (
     <Container>
