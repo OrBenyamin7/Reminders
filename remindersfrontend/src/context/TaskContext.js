@@ -20,12 +20,21 @@ export const tasksReducer = (state, action) => {
             }
 
             case 'UPDATE_TASK':
+                console.log(action.payload)
                 const updatedTaskIndex = state.tasks.findIndex((t) => t._id === action.payload._id)
-              
+                console.log(updatedTaskIndex)
+                console.log('//')
                 if (updatedTaskIndex !== -1) {
-                  const updatedTasks = [...state.tasks];
-                  updatedTasks[updatedTaskIndex] = action.payload;
+                  const updatedTasks = [...state.tasks]
+                  console.log(updatedTasks)
+                  updatedTasks[updatedTaskIndex] = {
+                    ...updatedTasks[updatedTaskIndex], // Merge existing task data
+                    ...action.payload, // Merge updated task data
+                  };
               
+                  //console.log(action.payload)
+                  console.log('/')
+                  console.log(updatedTasks)
                   return {
                     tasks: updatedTasks
                   }

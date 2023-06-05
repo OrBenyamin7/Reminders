@@ -91,7 +91,7 @@ const updateTask = async (req, res) => {
     }
 
     res.status(200).json(task)
-    
+
 }
 
 module.exports = {
