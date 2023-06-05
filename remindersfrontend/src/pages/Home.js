@@ -29,6 +29,11 @@ const Home = ({ theme }) => {
   }, [dispatch, user])
 
 
+    fetchTasks();
+  //}, [dispatch, tasks]);
+}, [dispatch]);
+
+
   return (
     <Container>
       <Row>

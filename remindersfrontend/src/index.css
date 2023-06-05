@@ -161,6 +161,7 @@ form button {
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
+  margin: 10px;
 }
 
 div.error {
@@ -180,6 +181,57 @@ input.error {
   position: fixed;
   top: 20px;
   right: 20px;
+}
+
+
+
+
+.headLineEditTask {
+  margin: auto;
+}
+
+.theme-dark .formEditTask {
+  background-color: #585858;
+  color: #f1f1f1;
+}
+
+.theme-light .formEditTask {
+  /* CSS styles for the dark theme */
+  background-color: #ffffff;
+  color: #333;
+}
+
+.description-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; 
+}
+
+.description-input strong {
+  margin-right: 8px;
+  width: 120px; 
+}
+
+.due-date-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; 
+}
+
+.due-date-input strong {
+  margin-right: 8px;
+  width: 120px; 
+}
+
+.btnEditTask {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 5px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px;
 }
 
 /* navbar */
@@ -219,4 +271,5 @@ form.login {
   padding: 20px;
   border-radius: 4px;
 }
+
 
