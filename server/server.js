@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const reminderRoutes = require('./routes/tasks')
+const userrRoutes = require('./routes/user')
 
 //express app
 const app = express()
@@ -19,6 +20,7 @@ app.use((req,res,next) => {
 
 //it like writing router.get('/',() => {}) - it will execute what we have in the bracilate
 app.use('/api/tasks',reminderRoutes)
+app.use('/api/user',userrRoutes)
 
 //connect to DB
 mongoose.connect(process.env.MONGO_URI)

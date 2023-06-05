@@ -1,11 +1,31 @@
 import { useTasksContext } from "../hooks/useTasksContext"
-
-//date fns
+import { useAuthContext } from '../hooks/useAuthContext'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 
 const TaskDetails = ({task}) => {
     const {dispatch } = useTasksContext()
+    const { user } = useAuthContext()
+
+    //hagar
+    const handleClick = async () => {
+        if (!user) {
+          return
+        }
+    
+        const response = await fetch('/api/tasks/' + task._id, {
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${user.token}`
+          }
+        })
+        const json = await response.json()
+    
+        if (response.ok) {
+          dispatch({type: 'DELETE_TASKS', payload: json})
+        }
+      }
+
 
     const handleDelete = async () => {
         const response = await fetch('/api/tasks/' + task._id, {
