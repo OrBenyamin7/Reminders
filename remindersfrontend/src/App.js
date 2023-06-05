@@ -11,6 +11,7 @@ import { useAuthContext } from './hooks/useAuthContext'
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 
+
 function App() {
   const { user } = useAuthContext()
   const [theme, setTheme] = useState('light');
@@ -56,6 +57,7 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+
+   }
 
 export default App;
