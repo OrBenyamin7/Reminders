@@ -16,7 +16,7 @@ const TaskEdit = ({ task, onClose }) => {
   };
 
   const handleSave = async () => {
-    
+
     const response = await fetch('/api/tasks/' + task._id, {
       method: 'PATCH',
       headers: {
@@ -34,13 +34,13 @@ const TaskEdit = ({ task, onClose }) => {
     console.log(response)
 
     if (response.ok) {
-      
+      console.log('here')
       dispatch({ type: 'UPDATE_TASK', payload: json })
       onClose() 
     } else {
       console.error('Failed to update the task')
     }
-  }
+}
 
   const handleDelete = async () => {
     const response = await fetch('/api/tasks/' + task._id, {
