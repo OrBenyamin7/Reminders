@@ -66,13 +66,10 @@ body.theme-dark .headLineReminder {
 }
 
 header a {
-  color: #000000;
+  color: #333;
   text-decoration: none;
-  font-family: "Lucida Console", "Courier New", monospace;
-  font-weight: bold;
- 
-
 }
+
 .pages {
   max-width: 1400px;
   padding: 20px;
@@ -85,11 +82,7 @@ header a {
   grid-template-columns: 3fr 1fr;
   gap: 100px;
   color: var(--headline-color);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
-
 
 .task-details {
   border-radius: 4px;
@@ -185,7 +178,6 @@ input.error {
 
 
 
-
 .headLineEditTask {
   margin: auto;
 }
@@ -233,43 +225,3 @@ input.error {
   cursor: pointer;
   margin: 10px;
 }
-
-/* navbar */
-nav {
-  display: flex;
-  align-items: center;
-}
-nav a {
-  margin-left: 10px;
-}
-/* auth forms */
-form.signup, form.login {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #f0eaea;
-  border-radius: 4px;
-}
-nav button {
-  background: #fff;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-  padding: 6px 10px;
-  border-radius: 4px;
-  font-family: "Poppins";
-  cursor: pointer;
-  font-size: 1em;
-  border-style: solid;
-  border-color: green;
-}
-
-/* auth forms */
-form.signup,
-form.login {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  border-radius: 4px;
-}
-
-

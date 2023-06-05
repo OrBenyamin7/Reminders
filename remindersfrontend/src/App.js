@@ -1,19 +1,14 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route,Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Container, Button } from 'react-bootstrap';
-import { MdWbSunny, MdNightsStay } from 'react-icons/md';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import { useAuthContext } from './hooks/useAuthContext'
 
+import { MdWbSunny, MdNightsStay } from 'react-icons/md';
 
 // Pages & components
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 
-
 function App() {
-  const { user } = useAuthContext()
   const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
@@ -36,28 +31,12 @@ function App() {
         </Button>
         <Container>
           <Routes>
-          <Route 
-              path="/" 
-              element={user ? <Home /> : <Navigate to="/login" />} 
-            />
-          {/* <Route path="/" element={<Home theme={theme} />} />  */}
-          </Routes>
-          <Routes>
-          <Route 
-              path="/signup" 
-              element={!user ? <Signup /> : <Navigate to="/" />}   />
-          </Routes>
-          <Routes>
-          <Route 
-              path="/login" 
-              element={!user ? <Login /> : <Navigate to="/" />} 
-            />
+            <Route path="/" element={<Home theme={theme} />} />
           </Routes>
         </Container>
       </BrowserRouter>
     </div>
   );
-
-   }
+}
 
 export default App;
