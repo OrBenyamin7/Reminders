@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import { useTasksContext } from "../hooks/useTasksContext"
 
+import { useAuthContext } from '../hooks/useAuthContext'
+
+
 const TaskEdit = ({ task, onClose }) => {
   const [editedDescription, setEditedDescription] = useState(task.description)
   const [editedDueDate, setEditedDueDate] = useState(task.due_date)
 
   const { dispatch } = useTasksContext()
+
+  const { user } = useAuthContext()
 
   const handleChangeDescription = (e) => {
     setEditedDescription(e.target.value)
@@ -20,7 +25,8 @@ const TaskEdit = ({ task, onClose }) => {
     const response = await fetch('/api/tasks/' + task._id, {
       method: 'PATCH',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${user.token}`
       },
       body: JSON.stringify({
         description: editedDescription,
@@ -28,6 +34,7 @@ const TaskEdit = ({ task, onClose }) => {
       })
     })
 
+    
     const json = await response.json()
 
     
@@ -41,15 +48,23 @@ const TaskEdit = ({ task, onClose }) => {
 }
 
   const handleDelete = async () => {
-        const response = await fetch('/api/tasks/' + task._id, {
-            method: 'DELETE'
-        })
-        const json = await response.json()
-
-        if (response.ok) {
-            dispatch({type: 'DELETE_TASK', payload: json})
+    const response = await fetch('/api/tasks/' + task._id, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${user.token}`
         }
+    })
+
+    const json = await response.json()
+
+    if (response.ok) {
+        dispatch({type: 'DELETE_TASK', payload: json})
+        console.log('task was delete')
     }
+    else{
+        console.error('Failed to delete the task')
+    }
+}
 
   return (
     <div className="modal-overlay">

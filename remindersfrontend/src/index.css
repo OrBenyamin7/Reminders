@@ -66,13 +66,10 @@ body.theme-dark .headLineReminder {
 }
 
 header a {
-  color: #000000;
+  color: #333;
   text-decoration: none;
-  font-family: "Lucida Console", "Courier New", monospace;
-  font-weight: bold;
- 
-
 }
+
 .pages {
   max-width: 1400px;
   padding: 20px;
@@ -85,11 +82,7 @@ header a {
   grid-template-columns: 3fr 1fr;
   gap: 100px;
   color: var(--headline-color);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
-
 
 .task-details {
   border-radius: 4px;
@@ -182,7 +175,6 @@ input.error {
   top: 20px;
   right: 20px;
 }
-
 
 
 

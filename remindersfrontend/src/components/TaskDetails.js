@@ -1,8 +1,8 @@
 
 import { useState } from 'react'
 
-import { useTasksContext } from "../hooks/useTasksContext"
-import { useAuthContext } from '../hooks/useAuthContext'
+//import { useTasksContext } from "../hooks/useTasksContext"
+//import { useAuthContext } from '../hooks/useAuthContext'
 
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import TaskEdit from '../components/TaskEdit'
@@ -10,8 +10,8 @@ import TaskEdit from '../components/TaskEdit'
 
 
 const TaskDetails = ({task}) => {
-    const {dispatch } = useTasksContext()
-    const { user } = useAuthContext()
+    //const {dispatch } = useTasksContext()
+    //const { user } = useAuthContext()
     
     const [showModal, setShowModal] = useState(false)
 
@@ -23,24 +23,14 @@ const TaskDetails = ({task}) => {
         setShowModal(false)
     }
 
+    /*
     //hagar
     const handleClick = async () => {
         if (!user) {
           return
         }
-    
-        const response = await fetch('/api/tasks/' + task._id, {
-          method: 'DELETE',
-          headers: {
-            'Authorization': `Bearer ${user.token}`
-          }
-        })
-        const json = await response.json()
-    
-        if (response.ok) {
-          dispatch({type: 'DELETE_TASKS', payload: json})
-        }
       }   
+      */
 
     return (
         <div className="task-details">
