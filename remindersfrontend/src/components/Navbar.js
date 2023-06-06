@@ -20,15 +20,22 @@ const Navbar = () => {
                 </Link>
                 <nav>
                     {user && (
-                          <div>
+                        <div>
                           <span>{user.email}</span>
-                          <button onClick={handleClick}>Log out</button>    
+                          <button className='btnLogOut' onClick={handleClick}>Log out</button>
+                          <div className="modal-buttons">
+                          <span className="material-symbols-outlined" onClick={handleClick}>logout</span>
                           </div>
+                        </div>
                 )}
                  {!user &&(
                     <div>
-                    <Link to="login">Login</Link>
-                    <Link to="signup">Sign up</Link>
+                    <Link to="login">
+                        <span className="material-symbols-outlined">login</span>
+                    </Link>
+                    <Link to="signup">
+                        <span className="material-symbols-outlined">app_registration</span>
+                    </Link>
                    </div>
                  )} 
                 </nav>
