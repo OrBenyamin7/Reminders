@@ -20,6 +20,12 @@ const tasksSchema = new Schema({
     sync_myTask: {
         type: Boolean,
         required: false
+    },
+
+    //userId
+    userId:{
+        type: String,
+        required: false
     }
 
 }, {timestamps: true })

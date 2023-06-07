@@ -31,7 +31,9 @@ const getTask = async (req, res) => {
 // create new task
 
 const createTask = async(req, res) => {
-    const {description, due_date, reminde_me, sync_myTask} = req.body
+    const {description, due_date, reminde_me, sync_myTask, userId} = req.body
+    console.log('the req bodu is')
+    console.log(req.body)
 
     let emptyFields = []
 
@@ -47,7 +49,7 @@ const createTask = async(req, res) => {
 
     //add doc to db
     try {
-        const task = await Task.create({description, due_date, reminde_me, sync_myTask})
+        const task = await Task.create({description, due_date, reminde_me, sync_myTask, userId})
         res.status(200).json(task)
     }catch (error){
         res.status(400).json({error: error.message})
