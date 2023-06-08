@@ -36,6 +36,7 @@ header .container {
   justify-content: space-between;
 }
 
+
 body.theme-light header .container {
   /* CSS styles for the light theme */
   background-color: #fff;
@@ -46,6 +47,8 @@ body.theme-dark header .container {
   background-color: #333;
   color: #f1f1f1;
 }
+
+
 
 .headLineReminder {
   background-color: #333;
@@ -274,6 +277,51 @@ form.login {
   border-radius: 4px;
   cursor: pointer;
   margin: 10px;
+}
+
+
+.task-details-past-due {
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgb(151, 23, 23);
+  border: 2px solid var(--border-color);
+}
+
+body.theme-dark .task-details-past-due {
+  /* CSS styles for the dark theme */
+  background-color: #585858;
+  color: #f1f1f1;
+}
+
+body.theme-light .task-details-past-due {
+  /* CSS styles for the dark theme */
+  background-color: #ffffff;
+  color: #333;
+}
+
+.task-details-past-due h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+
+.task-details-past-due p {
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--text-color);
+}
+
+.task-details-past-due span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
 }
 
 
