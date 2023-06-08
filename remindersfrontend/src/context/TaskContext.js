@@ -10,37 +10,37 @@ export const tasksReducer = (state, action) => {
                 //tasks: action.payload.sort((a, b) => new Date(a.due_date) - new Date(b.due_date))
 
                 tasks: action.payload.sort((a, b) => {
-                    const dateA = new Date(a.due_date);
-                    const dateB = new Date(b.due_date);
-                    const currentDate = new Date();
+                    const dateA = new Date(a.due_date)
+                    const dateB = new Date(b.due_date)
+                    const currentDate = new Date()
               
                     // Compare the due dates and times
                     if (dateA < dateB) {
-                      return -1;
+                      return -1
                     }
                     if (dateA > dateB) {
-                      return 1;
+                      return 1
                     }
               
                     // Due dates and times are equal, sort based on whether they are in the past or future
                     if (dateA < currentDate && dateB < currentDate) {
-                      return dateB - dateA; // Sort in descending order (newest to oldest)
+                      return dateB - dateA // Sort in descending order (newest to oldest)
                     }
                     if (dateA > currentDate && dateB > currentDate) {
-                      return dateA - dateB; // Sort in ascending order (nearest to farthest)
+                      return dateA - dateB // Sort in ascending order (nearest to farthest)
                     }
               
                     // Handle one task in the past and the other in the future
                     // Tasks in the past will be prioritized and placed at the beginning of the array
                     if (dateA < currentDate && dateB > currentDate) {
-                      return -1;
+                      return -1
                     }
                     if (dateA > currentDate && dateB < currentDate) {
-                      return 1;
+                      return 1
                     }
               
                     // Handle equal dates and times
-                    return 0;
+                    return 0
                   })
             }
 
