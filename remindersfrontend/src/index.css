@@ -207,7 +207,8 @@ input.error {
   width: 120px; 
 }
 
-.due-date-input {
+.due-date-input, 
+.priority-input {
   display: flex;
   align-items: center;
   margin-bottom: 20px; 
@@ -324,6 +325,22 @@ body.theme-light .task-details-past-due {
   color: #333;
 }
 
+
+
+.priority-input strong {
+  margin-right: 35px;
+}
+
+.theme-dark .priority-input select {
+  background-color: #585858;
+  color: #f1f1f1;
+}
+
+.theme-light .priority-input select {
+  /* CSS styles for the dark theme */
+  background-color: #ffffff;
+  color: #333;
+}
 
 
 
