@@ -7,6 +7,8 @@ import { useAuthContext } from '../hooks/useAuthContext'
 const TaskEdit = ({ task, onClose }) => {
   const [editedDescription, setEditedDescription] = useState(task.description)
   const [editedDueDate, setEditedDueDate] = useState(task.due_date)
+  const [editedPriority, setEditedPriority] = useState(task.priority);
+
 
   const { dispatch } = useTasksContext()
 
@@ -30,7 +32,8 @@ const TaskEdit = ({ task, onClose }) => {
       },
       body: JSON.stringify({
         description: editedDescription,
-        due_date: editedDueDate
+        due_date: editedDueDate,
+        priority: editedPriority,
       })
     })
 
@@ -85,6 +88,18 @@ const TaskEdit = ({ task, onClose }) => {
             defaultValue={editedDueDate ? editedDueDate.slice(0, 10) : ''}
             onChange={handleChangeDueDate}
           />
+        </div>
+
+        <div className="priority-input">
+          <strong>Priority: </strong>
+          <select
+            value={editedPriority}
+            onChange={(e) => setEditedPriority(e.target.value)}
+          >
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
         </div>
 
         <div className="modal-buttons">

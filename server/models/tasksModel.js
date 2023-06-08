@@ -26,7 +26,16 @@ const tasksSchema = new Schema({
     userId:{
         type: String,
         required: false
-    }
+    },
+
+    //priority
+    priority: {
+        type: String,
+        enum: ['Low', 'Medium', 'High'],
+        default: 'Low',
+      },
+
+    
 
 }, {timestamps: true })
 

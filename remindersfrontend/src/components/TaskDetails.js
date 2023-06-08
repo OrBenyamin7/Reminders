@@ -32,8 +32,8 @@ const TaskDetails = ({task}) => {
       }   
       */
 
-    const isTaskPastDue = new Date(task.due_date) < new Date();
-    console.log(isTaskPastDue)
+    const isTaskPastDue = (new Date(task.due_date) < new Date()) && (task.due_date);
+
 
     return (
         <div className={`task ${isTaskPastDue ? 'task-details-past-due' : 'task-details'}`}>
