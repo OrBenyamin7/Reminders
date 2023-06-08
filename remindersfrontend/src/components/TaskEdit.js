@@ -37,6 +37,16 @@ const TaskEdit = ({ task, onClose }) => {
       })
     })
 
+    const userId = user.userId
+      const secondResponse = await fetch('/api/tasks/' + userId, {
+        headers: {'Authorization': `Bearer ${user.token}`},
+      })
+      const secondJson = await secondResponse.json()
+
+      if (secondResponse.ok) {
+        dispatch({type: 'SET_TASKS', payload: secondJson})
+      }
+
     
     const json = await response.json()
 
