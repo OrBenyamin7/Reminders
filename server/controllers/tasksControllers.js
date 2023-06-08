@@ -32,8 +32,7 @@ const getTask = async (req, res) => {
 
 const createTask = async(req, res) => {
     const {description, due_date, reminde_me, sync_myTask, userId} = req.body
-    console.log('the req bodu is')
-    console.log(req.body)
+
 
     let emptyFields = []
 

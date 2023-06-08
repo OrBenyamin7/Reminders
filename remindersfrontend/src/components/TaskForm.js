@@ -22,8 +22,10 @@ const TaskForm = () => {
           setError('You must be logged in')
           return
         }
-        const userId = user._id
-        const task = {description, due_date, userId}
+        const userId = user.userId
+        const reminde_me = false
+        const sync_myTask = false
+        const task = {description, due_date, reminde_me, sync_myTask, userId}
 
         const response = await fetch('/api/tasks', {
             method: 'POST',

@@ -10,8 +10,6 @@ export const tasksReducer = (state, action) => {
             }
 
         case 'CREATE_TASK':
-            console.log('here5435435432543')
-            console.log(action.payload)
             return {
                 tasks: [action.payload, ...state.tasks]
             }
