@@ -1,5 +1,6 @@
 const express = require('express')
 const {
+    getUserTasks,
     getTasks,
     getTask,
     createTask,
@@ -13,6 +14,8 @@ const router = express.Router()
 // require auth for all workout routes
 router.use(requireAuth)
 
+//GET All Reminders of single user
+router.get('/:userId',getUserTasks)
 
 //GET All Reminders
 router.get('/',getTasks)

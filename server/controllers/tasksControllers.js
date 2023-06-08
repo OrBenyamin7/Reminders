@@ -1,6 +1,16 @@
 const Task = require('../models/tasksModel')
 const mongoose = require('mongoose')
 
+
+// get all user tasks
+const getUserTasks = async (req, res) => {
+    const { userId } = req.params
+    
+    const tasks = await Task.find({userId}).sort({createdAt: -1})
+
+    res.status(200).json(tasks)
+}
+
 // get all tasks
 const getTasks = async (req, res) => {
     const tasks = await Task.find({}).sort({createdAt: -1})
@@ -101,6 +111,7 @@ const updateTask = async (req, res) => {
 }
 
 module.exports = {
+    getUserTasks,
     getTasks,
     getTask,
     createTask,
