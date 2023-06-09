@@ -95,6 +95,38 @@ export const tasksReducer = (state, action) => {
                 ) 
             }
 
+        case 'SORT_BY_CREATE_DATE':
+            return {
+                tasks: state.tasks.slice().sort((a, b) => {
+                  const dateA = new Date(a.createdAt);
+                  const dateB = new Date(b.createdAt);
+                  return dateB.getTime() - dateA.getTime();
+                })
+            }
+            
+
+        case 'SORT_BY_DUE_DATE':
+            return {
+                tasks: [...state.tasks].sort((a, b) => {
+                    const dateA = new Date(a.due_date);
+                    const dateB = new Date(b.due_date);
+                    return dateA - dateB; // Sort in ascending order (oldest to newest)
+                })
+            }
+
+        case 'SORT_BY_PRIORITY':
+            return {
+                tasks: [...state.tasks].sort((a, b) => {
+                    const priorityA = a.priority.toLowerCase();
+                    const priorityB = b.priority.toLowerCase();
+                    if (priorityA === 'high') return -1;
+                    if (priorityB === 'high') return 1;
+                    if (priorityA === 'medium' && priorityB !== 'high') return -1;
+                    if (priorityB === 'medium' && priorityA !== 'high') return 1;
+                    return 0;
+                  })
+            }
+
         default:
             return state
     }

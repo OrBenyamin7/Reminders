@@ -368,6 +368,13 @@ body.theme-dark header .containerCategory {
 
 .headLineCategory {
   font-size: medium;
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  padding: 5px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 body.theme-light .headLineCategory {
@@ -380,6 +387,15 @@ body.theme-dark .headLineCategory {
   /* CSS styles for the dark theme */
   background-color: #333;
   color: #f1f1f1;
+}
+
+
+
+
+
+
+.material-symbols-outlined {
+  cursor: pointer;
 }
 
 
