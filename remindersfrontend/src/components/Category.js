@@ -5,7 +5,8 @@ const Category = () => {
     const {user } = useAuthContext()
     const { dispatch} = useTasksContext()
 
-    //console.log('herehfdghfhg')
+    
+    
 
     const chooseAll = async () => {
         const userId = user.userId
