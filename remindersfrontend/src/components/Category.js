@@ -5,6 +5,9 @@ const Category = () => {
     const {user } = useAuthContext()
     const { dispatch} = useTasksContext()
 
+
+    
+
     const chooseAll = async () => {
         const userId = user.userId
         const response = await fetch('/api/tasks/' + userId, {
