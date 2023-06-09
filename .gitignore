@@ -1,4 +1,4 @@
-
+server/node_modules
 server/node_modules/.bin/mime
 server/node_modules/.bin/mime.cmd
 server/node_modules/.bin/mime.ps1
