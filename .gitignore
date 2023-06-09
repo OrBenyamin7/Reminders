@@ -1464,7 +1464,6 @@ server/node_modules/whatwg-url/README.md
 server/node_modules/whatwg-url/webidl2js-wrapper.js
 server/client_secret_572225403155-bd5d3h4kekbr6tq8hgv2ket3np8vfehq.apps.googleusercontent.com.json
 server/node_modules/validator/lib/isHash.js
-*.js
 *.cmd
 *.ps1
 server/node_modules/.bin/node-pre-gyp
