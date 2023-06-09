@@ -7,7 +7,7 @@ const Navbar = () => {
     const {logout } = useLogout()
     const {user } = useAuthContext()
 
-    console.log('navbar')
+    
 
     const handleClick = () => {
         logout()
