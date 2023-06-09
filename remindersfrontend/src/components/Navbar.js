@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLogout } from '../hooks/useLogut'
 import { useAuthContext } from '../hooks/useAuthContext'
-import Category from './Category'
 
 
 const Navbar = () => {
@@ -41,7 +40,6 @@ const Navbar = () => {
                  )} 
                 </nav>
             </div>
-            <Category/>
         </header>
     )
 }

@@ -344,3 +344,43 @@ body.theme-light .task-details-past-due {
 
 
 
+header .containerCategory {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px; 
+}
+
+
+body.theme-light header .containerCategory {
+  /* CSS styles for the light theme */
+  background-color: #c0c0c0;
+}
+
+body.theme-dark header .containerCategory {
+  /* CSS styles for the dark theme */
+  background-color: #333;
+  color: #f1f1f1;
+}
+
+.headLineCategory {
+  font-size: medium;
+}
+
+body.theme-light .headLineCategory {
+  /* CSS styles for the light theme */
+  background-color: #c0c0c0;
+  color: #333;
+}
+
+body.theme-dark .headLineCategory {
+  /* CSS styles for the dark theme */
+  background-color: #333;
+  color: #f1f1f1;
+}
+
+
+
