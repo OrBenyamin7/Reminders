@@ -35,6 +35,12 @@ const tasksSchema = new Schema({
         default: 'Low',
       },
 
+    secondUserEmail: {
+        type: String, 
+        required: false,
+        default: null
+    }
+
     
 
 }, {timestamps: true })

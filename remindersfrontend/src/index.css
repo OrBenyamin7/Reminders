@@ -390,12 +390,15 @@ body.theme-dark .headLineCategory {
 }
 
 
-
-
-
-
 .material-symbols-outlined {
   cursor: pointer;
+}
+
+
+.shareTaskInput {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; 
 }
 
 

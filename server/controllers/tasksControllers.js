@@ -11,6 +11,17 @@ const getUserTasks = async (req, res) => {
     res.status(200).json(tasks)
 }
 
+
+const getUserSharedTasks = async (req, res) => {
+    console.log('hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeer')
+    const { userMail } = req.params
+    console.log('here is the user mail')
+    console.log(userMail)
+}
+
+
+
+
 // get all tasks
 const getTasks = async (req, res) => {
     const tasks = await Task.find({}).sort({createdAt: -1})
@@ -112,6 +123,7 @@ const updateTask = async (req, res) => {
 
 module.exports = {
     getUserTasks,
+    getUserSharedTasks,
     getTasks,
     getTask,
     createTask,

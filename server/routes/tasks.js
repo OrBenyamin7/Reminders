@@ -1,6 +1,7 @@
 const express = require('express')
 const {
     getUserTasks,
+    getUserSharedTasks,
     getTasks,
     getTask,
     createTask,
@@ -16,6 +17,15 @@ router.use(requireAuth)
 
 //GET All Reminders of single user
 router.get('/:userId',getUserTasks)
+
+
+
+
+//GET All Reminders that shared with the user
+router.get('/:email',getUserSharedTasks)
+
+
+
 
 //GET All Reminders
 router.get('/',getTasks)

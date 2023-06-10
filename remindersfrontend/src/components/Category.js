@@ -15,13 +15,17 @@ const Category = () => {
         dispatch({ type: 'SET_TASKS' , payload: json})
     }
 
-    const chooseCreateDate = async () => {
+    const chooseShared = async () => {
         const userId = user.userId
-        const response = await fetch('/api/tasks/' + userId, {
+        const userEmail = user.email
+        console.log(userEmail)
+        const response = await fetch('/api/tasks/' + userEmail, {
             headers: {'Authorization': `Bearer ${user.token}`},
         })
+        console.log('here2')
         const json = await response.json()
-        dispatch({type: 'SORT_BY_CREATE_DATE', payload: json})
+        console.log(json)
+        dispatch({type: 'SORT_BY_SHARED_MAIL', payload: json})
     }
 
 
@@ -51,9 +55,9 @@ const Category = () => {
             {user && (
                 <div className="containerCategory">
                     <button className="headLineCategory" onClick={chooseAll}>All</button>
-                    <button className="headLineCategory" onClick={chooseCreateDate}>Create Date</button>
-                    <button className="headLineCategory" onClick={chooseDueDate}>Due Date</button>
                     <button className="headLineCategory" onClick={choosePriority}>Priority</button>
+                    <button className="headLineCategory" onClick={chooseDueDate}>Due Date</button>
+                    <button className="headLineCategory" onClick={chooseShared}>Shared Tasks</button>
                 </div>
             )}
         </header>
