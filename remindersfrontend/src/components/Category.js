@@ -16,6 +16,7 @@ const Category = () => {
     }
 
     const chooseShared = async () => {
+        /*
         const userId = user.userId
         const userEmail = user.email
         console.log(userEmail)
@@ -26,6 +27,7 @@ const Category = () => {
         const json = await response.json()
         console.log(json)
         dispatch({type: 'SORT_BY_SHARED_MAIL', payload: json})
+        */
     }
 
 

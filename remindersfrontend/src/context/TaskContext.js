@@ -94,7 +94,7 @@ export const tasksReducer = (state, action) => {
                     task._id === action.payload._id ? action.payload : task
                 ) 
             }
-            
+           /* 
         case 'SORT_BY_SHARED_MAIL':
             console.log('in the function of SORT_BY_SHARED_MAIL')
             return {
@@ -104,6 +104,7 @@ export const tasksReducer = (state, action) => {
                   return dateB.getTime() - dateA.getTime();
                 })
             }
+            */
             
 
         case 'SORT_BY_DUE_DATE':

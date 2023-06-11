@@ -13,10 +13,12 @@ const getUserTasks = async (req, res) => {
 
 
 const getUserSharedTasks = async (req, res) => {
+    /*
     console.log('hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeer')
     const { userMail } = req.params
     console.log('here is the user mail')
     console.log(userMail)
+    */
 }
 
 
