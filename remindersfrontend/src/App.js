@@ -10,6 +10,7 @@ import { useAuthContext } from './hooks/useAuthContext'
 // Pages & components
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
+import Category from './components/Category'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar />
+        <Category/>
         <Button variant="secondary" className="theme-toggle" onClick={toggleTheme}>
           {theme === 'light' ? <MdNightsStay /> : <MdWbSunny />}
         </Button>

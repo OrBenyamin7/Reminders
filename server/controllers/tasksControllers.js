@@ -1,6 +1,29 @@
 const Task = require('../models/tasksModel')
 const mongoose = require('mongoose')
 
+
+// get all user tasks
+const getUserTasks = async (req, res) => {
+    const { userId } = req.params
+    
+    const tasks = await Task.find({userId}).sort({createdAt: -1})
+
+    res.status(200).json(tasks)
+}
+
+
+const getUserSharedTasks = async (req, res) => {
+    /*
+    console.log('hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeer')
+    const { userMail } = req.params
+    console.log('here is the user mail')
+    console.log(userMail)
+    */
+}
+
+
+
+
 // get all tasks
 const getTasks = async (req, res) => {
     const tasks = await Task.find({}).sort({createdAt: -1})
@@ -31,7 +54,8 @@ const getTask = async (req, res) => {
 // create new task
 
 const createTask = async(req, res) => {
-    const {description, due_date, reminde_me, sync_myTask} = req.body
+    const {description, due_date, reminde_me, sync_myTask, userId} = req.body
+
 
     let emptyFields = []
 
@@ -47,7 +71,7 @@ const createTask = async(req, res) => {
 
     //add doc to db
     try {
-        const task = await Task.create({description, due_date, reminde_me, sync_myTask})
+        const task = await Task.create({description, due_date, reminde_me, sync_myTask, userId})
         res.status(200).json(task)
     }catch (error){
         res.status(400).json({error: error.message})
@@ -100,6 +124,8 @@ const updateTask = async (req, res) => {
 }
 
 module.exports = {
+    getUserTasks,
+    getUserSharedTasks,
     getTasks,
     getTask,
     createTask,

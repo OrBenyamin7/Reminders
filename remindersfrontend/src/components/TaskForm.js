@@ -22,7 +22,10 @@ const TaskForm = () => {
           setError('You must be logged in')
           return
         }
-        const task = {description, due_date}
+        const userId = user.userId
+        const reminde_me = false
+        const sync_myTask = false
+        const task = {description, due_date, reminde_me, sync_myTask, userId}
 
         const response = await fetch('/api/tasks', {
             method: 'POST',
@@ -34,6 +37,9 @@ const TaskForm = () => {
           })
 
         const json = await response.json()
+
+        console.log('json file')
+        console.log(json)
 
         if(!response.ok) {
             setError(json.error)

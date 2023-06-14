@@ -32,8 +32,11 @@ const TaskDetails = ({task}) => {
       }   
       */
 
+    const isTaskPastDue = (new Date(task.due_date) < new Date()) && (task.due_date);
+
+
     return (
-        <div className="task-details">
+        <div className={`task ${isTaskPastDue ? 'task-details-past-due' : 'task-details'}`}>
             <h4>{task.description}</h4>
             {task.due_date !== null && (
                 <p><strong>Due date: </strong>{formatDistanceToNow(new Date(task.due_date), { addSuffix: true })}</p>

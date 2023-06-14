@@ -7,6 +7,9 @@ import { useAuthContext } from '../hooks/useAuthContext'
 const TaskEdit = ({ task, onClose }) => {
   const [editedDescription, setEditedDescription] = useState(task.description)
   const [editedDueDate, setEditedDueDate] = useState(task.due_date)
+  const [editedPriority, setEditedPriority] = useState(task.priority)
+  const [editedSharedEmail, setSecondEmail] = useState(task.secondUserEmail);
+
 
   const { dispatch } = useTasksContext()
 
@@ -14,11 +17,15 @@ const TaskEdit = ({ task, onClose }) => {
 
   const handleChangeDescription = (e) => {
     setEditedDescription(e.target.value)
-  };
+  }
 
   const handleChangeDueDate = (e) => {
     setEditedDueDate(e.target.value)
-  };
+  }
+
+  const handleChangeEmail = (e) => {
+    setSecondEmail(e.target.value);
+  }
 
   const handleSave = async () => {
 
@@ -30,14 +37,25 @@ const TaskEdit = ({ task, onClose }) => {
       },
       body: JSON.stringify({
         description: editedDescription,
-        due_date: editedDueDate
+        due_date: editedDueDate,
+        priority: editedPriority,
+        secondUserEmail: editedSharedEmail,
       })
     })
+
+    const userId = user.userId
+      const secondResponse = await fetch('/api/tasks/' + userId, {
+        headers: {'Authorization': `Bearer ${user.token}`},
+      })
+      const secondJson = await secondResponse.json()
+
+      if (secondResponse.ok) {
+        dispatch({type: 'SET_TASKS', payload: secondJson})
+      }
 
     
     const json = await response.json()
 
-    
 
     if (response.ok) {
       dispatch({ type: 'UPDATE_TASK', payload: json })
@@ -84,6 +102,27 @@ const TaskEdit = ({ task, onClose }) => {
             type="Date"
             defaultValue={editedDueDate ? editedDueDate.slice(0, 10) : ''}
             onChange={handleChangeDueDate}
+          />
+        </div>
+
+        <div className="priority-input">
+          <strong>Priority: </strong>
+          <select
+            value={editedPriority}
+            onChange={(e) => setEditedPriority(e.target.value)}
+          >
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+
+        <div className="shareTaskInput">
+          <strong>Share with: </strong>
+          <input
+            type="email"
+            value={editedSharedEmail}
+            onChange={handleChangeEmail}
           />
         </div>
 

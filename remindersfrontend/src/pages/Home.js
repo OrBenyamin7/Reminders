@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
-import { useTasksContext } from '../hooks/useTasksContext';
-import { Container, Row, Col } from 'react-bootstrap';
+import { useEffect } from 'react'
+import { useTasksContext } from '../hooks/useTasksContext'
+import { Container, Row, Col } from 'react-bootstrap'
 import { useAuthContext } from "../hooks/useAuthContext"
 
 // Components
@@ -13,7 +13,8 @@ const Home = ({ theme }) => {
 
   useEffect(() => {
     const fetchTasks = async () => {
-      const response = await fetch('/api/tasks', {
+      const userId = user.userId
+      const response = await fetch('/api/tasks/' + userId, {
         headers: {'Authorization': `Bearer ${user.token}`},
       })
       const json = await response.json()

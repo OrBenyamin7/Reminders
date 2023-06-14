@@ -20,7 +20,28 @@ const tasksSchema = new Schema({
     sync_myTask: {
         type: Boolean,
         required: false
+    },
+
+    //userId
+    userId:{
+        type: String,
+        required: false
+    },
+
+    //priority
+    priority: {
+        type: String,
+        enum: ['Low', 'Medium', 'High'],
+        default: 'Low',
+      },
+
+    secondUserEmail: {
+        type: String, 
+        required: false,
+        default: null
     }
+
+    
 
 }, {timestamps: true })
 
