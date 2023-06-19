@@ -12,14 +12,28 @@ const getUserTasks = async (req, res) => {
 }
 
 
+// taskController.js
+
 const getUserSharedTasks = async (req, res) => {
-    /*
-    console.log('hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeer')
-    const { userMail } = req.params
-    console.log('here is the user mail')
-    console.log(userMail)
-    */
-}
+    try {
+        const { userId } = req.params
+    
+        const tasks = await Task.find({userId}).sort({createdAt: -1})
+      
+      // Find all tasks where the secondUserEmail matches the user's email
+      //const sharedTasks = await Task.find({ secondUserEmail: userEmail });
+      
+      res.status(200).json(sharedTasks);
+    } catch (error) {
+      console.error('Error retrieving shared tasks:', error);
+      res.status(500).json({ message: 'Error retrieving shared tasks' });
+    }
+  };
+ 
+  module.exports = {
+    getUserSharedTasks,
+  };
+  
 
 
 

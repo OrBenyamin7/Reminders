@@ -18,12 +18,12 @@ router.use(requireAuth)
 //GET All Reminders of single user
 router.get('/:userId',getUserTasks)
 
-
-
-/*
 //GET All Reminders that shared with the user
-router.get('/:email',getUserSharedTasks)
-*/
+router.get('/:getUserSharedTasks', getUserSharedTasks);
+
+module.exports = router;
+
+
 
 
 

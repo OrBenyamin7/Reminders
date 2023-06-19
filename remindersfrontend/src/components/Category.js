@@ -15,21 +15,23 @@ const Category = () => {
         dispatch({ type: 'SET_TASKS' , payload: json})
     }
 
-    const chooseShared = async () => {
-        /*
-        const userId = user.userId
-        const userEmail = user.email
-        console.log(userEmail)
-        const response = await fetch('/api/tasks/' + userEmail, {
-            headers: {'Authorization': `Bearer ${user.token}`},
-        })
-        console.log('here2')
-        const json = await response.json()
-        console.log(json)
-        dispatch({type: 'SORT_BY_SHARED_MAIL', payload: json})
-        */
+   
+const chooseShared = async () => {
+    try {
+      const userEmail = user.email;
+      console.log(userEmail)
+      // Fetch the shared tasks for the user
+      const response = await fetch(`/api/tasks/${userEmail}`, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
+      console.log(response)
+      const json = await response.json();
+      console.log(json)
+      dispatch({ type: 'SORT_BY_SHARED_MAIL', payload: json });
+    } catch (error) {
+      console.error('Error fetching shared tasks:', error);
     }
-
+  };
 
 
     const chooseDueDate = async () => {

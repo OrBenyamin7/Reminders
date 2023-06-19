@@ -34,7 +34,7 @@ const tasksSchema = new Schema({
         enum: ['Low', 'Medium', 'High'],
         default: 'Low',
       },
-
+    //sharing reminders with people by email
     secondUserEmail: {
         type: String, 
         required: false,
