@@ -16,14 +16,14 @@ body.theme-light {
   background-color: #f1f1f1;
   color: #333;
 
-  background-image: url("assets/pictures/backgroundLight.jpg");
-  background-size: fill;
+  background-image: url("assets/pictures/light.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 body.theme-dark {
-  background-image: url("assets/pictures/backgroundDark.jpg");
-  background-size: fill;
+  background-image: url("assets/pictures/dark.png");
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: #333;
   color: #f1f1f1;

@@ -16,7 +16,6 @@ const Category = () => {
     }
 
     const chooseShared = async () => {
-        const userId = user.userId
         const userEmail = user.email
         console.log(userEmail)
         console.log('here in choose shared')
