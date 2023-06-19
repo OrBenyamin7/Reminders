@@ -44,12 +44,12 @@ header .container {
 }
 
 body.theme-light header .container {
-  /* CSS styles for the light theme */
+  
   background-color: #a0d5ef;
 }
 
 body.theme-dark header .container {
-  /* CSS styles for the dark theme */
+  
   background-color: #333;
   color: #f1f1f1;
 }
@@ -62,14 +62,14 @@ body.theme-dark header .container {
 }
 
 body.theme-light .headLineReminder {
-  /* CSS styles for the light theme */
+  
   background-color: #a0d5ef;
   color: #333;
  
 }
 
 body.theme-dark .headLineReminder {
-  /* CSS styles for the dark theme */
+  
   background-color: #333;
   color: #f1f1f1;
 }
@@ -103,13 +103,13 @@ header a {
 }
 
 body.theme-dark .task-details {
-  /* CSS styles for the dark theme */
+  
   background-color: #585858;
   color: #f1f1f1;
 }
 
 body.theme-light .task-details {
-  /* CSS styles for the dark theme */
+  
   background-color: #e0ebee;
   color: #333;
 }
@@ -197,7 +197,7 @@ input.error {
 }
 
 .theme-light .formEditTask {
-  /* CSS styles for the dark theme */
+  
   background-color: #ffffff;
   color: #333;
 }
@@ -297,13 +297,13 @@ form.login {
 }
 
 body.theme-dark .task-details-past-due {
-  /* CSS styles for the dark theme */
+  
   background-color: #585858;
   color: #f1f1f1;
 }
 
 body.theme-light .task-details-past-due {
-  /* CSS styles for the dark theme */
+  
   background-color: #e0ebee;
   color: #333;
 }
@@ -343,7 +343,7 @@ body.theme-light .task-details-past-due {
 }
 
 .theme-light .priority-input select {
-  /* CSS styles for the dark theme */
+  
   background-color: #ffffff;
   color: #333;
 }
@@ -364,12 +364,12 @@ header .containerCategory {
 
 
 body.theme-light header .containerCategory {
-  /* CSS styles for the light theme */
+  
   background-color: #badff1;
 }
 
 body.theme-dark header .containerCategory {
-  /* CSS styles for the dark theme */
+  
   background-color: #333;
   
 }
@@ -386,13 +386,13 @@ body.theme-dark header .containerCategory {
 }
 
 body.theme-light .headLineCategory {
-  /* CSS styles for the light theme */
+  
   background-color: #badff1;
   color: #333;
 }
 
 body.theme-dark .headLineCategory {
-  /* CSS styles for the dark theme */
+  
   background-color: #333;
   color: #f1f1f1;
 }
