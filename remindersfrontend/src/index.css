@@ -293,7 +293,7 @@ form.login {
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgb(151, 23, 23);
+  box-shadow: 5px 5px 20px rgb(151, 23, 23);
   border: 2px solid var(--border-color);
 }
 
@@ -426,13 +426,13 @@ body.theme-dark .headLineCategory {
   align-items: center;
 }
 
-body.theme-light .login h3 {
+body.theme-light .wrapper h3 {
   font-size: 2em;
   color: #162938;
   text-align: center;
 }
 
-body.theme-dark .login h3 {
+body.theme-dark .wrapper h3 {
   font-size: 2em;
   color: #f1f1f1;
   text-align: center;
