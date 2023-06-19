@@ -16,18 +16,19 @@ const Category = () => {
     }
 
     const chooseShared = async () => {
-        /*
         const userId = user.userId
         const userEmail = user.email
         console.log(userEmail)
-        const response = await fetch('/api/tasks/' + userEmail, {
+        console.log('here in choose shared')
+        const response = await fetch('/api/tasks/shareTask/' + userEmail, {
             headers: {'Authorization': `Bearer ${user.token}`},
         })
         console.log('here2')
+        
         const json = await response.json()
         console.log(json)
         dispatch({type: 'SORT_BY_SHARED_MAIL', payload: json})
-        */
+        
     }
 
 

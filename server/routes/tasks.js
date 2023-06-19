@@ -20,10 +20,10 @@ router.get('/:userId',getUserTasks)
 
 
 
-/*
+
 //GET All Reminders that shared with the user
-router.get('/:email',getUserSharedTasks)
-*/
+router.get('/shareTask/:mail',getUserSharedTasks)
+
 
 
 
