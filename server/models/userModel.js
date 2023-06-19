@@ -12,15 +12,19 @@ const userShcema = new Schema({
     password: {
         type: String,
         required:true
+    },
+    name: {
+        type: String,
+        required:true
     }
 })
 
 
 //static signup method
-userShcema.statics.signup = async function(email,password) {
+userShcema.statics.signup = async function(email,password,name) {
    
 //validation 
-if(!email || !password){
+if(!email || !password || !name){
     throw Error('All fields must be filled')
 }
 if(!validator.isEmail(email)){
@@ -41,7 +45,7 @@ const exists = await this.findOne({email})
     //bycrpt hash our password
     const hash = await bcrypt.hash(password,salt)
     //create the doc forus
-    const user = await this.create({email,password: hash})
+    const user = await this.create({email,name,password: hash})
     return user
 
 }
@@ -60,6 +64,7 @@ const user = await this.findOne({email})
     }
 
     const match = await bcrypt.compare(password,user.password) //hash password =user.password
+    
     if(!match){
         throw Error('Incorrect password')
     }

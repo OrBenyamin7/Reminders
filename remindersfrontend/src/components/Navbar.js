@@ -21,6 +21,7 @@ const Navbar = () => {
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
         setTheme(newTheme);
+        
     };
 
     useEffect(() => {
@@ -32,13 +33,11 @@ const Navbar = () => {
     return (
         <header>
             <div className="container">
-                <Link to="/">
-                    <h1 className="headLineReminder">Reminders</h1>
-                </Link>
                 <nav>
                     {user && (
                         <div>
-                          <span>{user.email}</span>
+                          <h1 className="headLineReminder">{user.userName}</h1>
+                          
                           <span className="material-symbols-outlined" onClick={handleClick}>logout</span>
                           <Button variant="secondary" className="theme-toggle" onClick={toggleTheme}>
                             {theme === 'light' ? <MdNightsStay /> : <MdWbSunny />}
@@ -47,6 +46,7 @@ const Navbar = () => {
                 )}
                  {!user &&(
                     <div>
+                        <h1 className="headLineReminder">Reminders</h1>
                         <Link to="login">
                             <span className="material-symbols-outlined">login</span>
                         </Link>
