@@ -43,7 +43,6 @@ header .container {
   justify-content: space-between;
 }
 
-
 body.theme-light header .container {
   /* CSS styles for the light theme */
   background-color: #a0d5ef;
