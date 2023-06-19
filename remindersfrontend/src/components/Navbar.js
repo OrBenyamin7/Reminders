@@ -27,12 +27,12 @@ const Navbar = () => {
                 )}
                  {!user &&(
                     <div>
-                    <Link to="login">
-                        <span className="material-symbols-outlined">login</span>
-                    </Link>
-                    <Link to="signup">
-                        <span className="material-symbols-outlined">app_registration</span>
-                    </Link>
+                        <Link to="login">
+                            <span className="material-symbols-outlined">login</span>
+                        </Link>
+                        <Link to="signup">
+                            <span className="material-symbols-outlined">app_registration</span>
+                        </Link>
                    </div>
                  )} 
                 </nav>
