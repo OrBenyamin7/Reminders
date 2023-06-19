@@ -364,7 +364,7 @@ header .containerCategory {
 
 body.theme-light header .containerCategory {
   /* CSS styles for the light theme */
-  background-color: #c0c0c0;
+  background-color: #badff1;
 }
 
 body.theme-dark header .containerCategory {
@@ -386,7 +386,7 @@ body.theme-dark header .containerCategory {
 
 body.theme-light .headLineCategory {
   /* CSS styles for the light theme */
-  background-color: #c0c0c0;
+  background-color: #badff1;
   color: #333;
 }
 
