@@ -16,12 +16,15 @@ body.theme-light {
   background-color: #f1f1f1;
   color: #333;
 
-  background-image: url("assets/pictures/background.jpg");
+  background-image: url("assets/pictures/backgroundLight.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 body.theme-dark {
+  background-image: url("assets/pictures/backgroundDark.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #333;
   color: #f1f1f1;
 }
@@ -247,7 +250,7 @@ form.signup, form.login {
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
-  background: #f0eaea;
+  /*background: #f0eaea;*/
   border-radius: 4px;
 }
 nav button {
@@ -403,6 +406,23 @@ body.theme-dark .headLineCategory {
   display: flex;
   align-items: center;
   margin-bottom: 20px; 
+}
+
+.wrapper {
+  /*position: center;
+  width: 400px;
+  height: 440px;*/
+  background: transparent;
+  border: 2px solid rgba(225, 225, 225, 5);
+
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
 }
 
 
