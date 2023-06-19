@@ -411,7 +411,13 @@ body.theme-light .material-symbols-outlined {
   color: #000000;
 }
 
+body.theme-dark .task-details span {
+  color: #000000;
+}
 
+body.theme-dark .task-details-past-due span {
+  color: #000000;
+}
 
 
 .shareTaskInput {
