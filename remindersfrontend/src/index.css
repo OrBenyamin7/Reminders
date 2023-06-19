@@ -181,7 +181,7 @@ input.error {
 }
 
 .theme-toggle {
-  position: fixed;
+  position:center;
   top: 20px;
   right: 20px;
 }
@@ -359,6 +359,8 @@ header .containerCategory {
   align-items: center;
   justify-content: space-between;
   margin-top: 15px; 
+  border-radius: 15px; 
+
 }
 
 
@@ -370,7 +372,7 @@ body.theme-light header .containerCategory {
 body.theme-dark header .containerCategory {
   /* CSS styles for the dark theme */
   background-color: #333;
-  color: #f1f1f1;
+  
 }
 
 .headLineCategory {
@@ -380,7 +382,7 @@ body.theme-dark header .containerCategory {
   color: #fff;
   padding: 5px;
   font-family: "Poppins";
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -405,6 +407,12 @@ body.theme-dark .material-symbols-outlined {
   color: #f1f1f1;
 }
 
+body.theme-light .material-symbols-outlined {
+  color: #000000;
+}
+
+
+
 
 .shareTaskInput {
   display: flex;
@@ -420,7 +428,7 @@ body.theme-dark .material-symbols-outlined {
   border: 2px solid rgba(225, 225, 225, 5);
 
   max-width: 400px;
-  margin: 40px auto;
+  margin: 20px auto;
   padding: 20px;
   border-radius: 20px;
   backdrop-filter: blur(40px);
