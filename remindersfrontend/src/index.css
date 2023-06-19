@@ -17,13 +17,13 @@ body.theme-light {
   color: #333;
 
   background-image: url("assets/pictures/backgroundLight.jpg");
-  background-size: cover;
+  background-size: fill;
   background-repeat: no-repeat;
 }
 
 body.theme-dark {
   background-image: url("assets/pictures/backgroundDark.jpg");
-  background-size: cover;
+  background-size: fill;
   background-repeat: no-repeat;
   background-color: #333;
   color: #f1f1f1;
@@ -419,11 +419,35 @@ body.theme-dark .headLineCategory {
   margin: 40px auto;
   padding: 20px;
   border-radius: 20px;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(40px);
   box-shadow: 0 0 20px rgba(0, 0, 0, .5);
   display: flex;
   justify-content: center;
+  align-items: center;
 }
+
+body.theme-light .login h3 {
+  font-size: 2em;
+  color: #162938;
+  text-align: center;
+}
+
+body.theme-dark .login h3 {
+  font-size: 2em;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+.input-box {
+  position: relative;
+  margin: 30px 0;
+}
+
+.logInButton {
+  position:relative;
+}
+
+
 
 
 
