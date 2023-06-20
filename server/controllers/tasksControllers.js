@@ -13,12 +13,17 @@ const getUserTasks = async (req, res) => {
 
 
 const getUserSharedTasks = async (req, res) => {
-    /*
     console.log('hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeer')
-    const { userMail } = req.params
-    console.log('here is the user mail')
-    console.log(userMail)
-    */
+
+    const { mail } = req.params
+
+    console.log(mail)
+    console.log(req.params)
+
+    const tasks = await Task.find({secondUserEmail: mail})
+
+    //console.log(tasks)
+    res.status(200).json(tasks)
 }
 
 

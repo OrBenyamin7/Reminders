@@ -95,38 +95,46 @@ export const tasksReducer = (state, action) => {
                     task._id === action.payload._id ? action.payload : task
                 ) 
             }
-           /* 
+           
         case 'SORT_BY_SHARED_MAIL':
-            console.log('in the function of SORT_BY_SHARED_MAIL')
+            //console.log('in the function of SORT_BY_SHARED_MAIL')
+            //console.log(action.payload)
+            /*
             return {
                 tasks: state.tasks.slice().sort((a, b) => {
                   const dateA = new Date(a.createdAt);
                   const dateB = new Date(b.createdAt);
                   return dateB.getTime() - dateA.getTime();
+                  
                 })
             }
             */
+           //return action.payload
+           return {
+            tasks: action.payload
+           }
+            
             
 
         case 'SORT_BY_DUE_DATE':
             return {
                 tasks: [...state.tasks].sort((a, b) => {
-                    const dateA = new Date(a.due_date);
-                    const dateB = new Date(b.due_date);
-                    return dateA - dateB; // Sort in ascending order (oldest to newest)
+                    const dateA = new Date(a.due_date)
+                    const dateB = new Date(b.due_date)
+                    return dateA - dateB // Sort in ascending order (oldest to newest)
                 })
             }
 
         case 'SORT_BY_PRIORITY':
             return {
                 tasks: [...state.tasks].sort((a, b) => {
-                    const priorityA = a.priority.toLowerCase();
-                    const priorityB = b.priority.toLowerCase();
-                    if (priorityA === 'high') return -1;
-                    if (priorityB === 'high') return 1;
-                    if (priorityA === 'medium' && priorityB !== 'high') return -1;
-                    if (priorityB === 'medium' && priorityA !== 'high') return 1;
-                    return 0;
+                    const priorityA = a.priority.toLowerCase()
+                    const priorityB = b.priority.toLowerCase()
+                    if (priorityA === 'high') return -1
+                    if (priorityB === 'high') return 1
+                    if (priorityA === 'medium' && priorityB !== 'high') return -1
+                    if (priorityB === 'medium' && priorityA !== 'high') return 1
+                    return 0
                   })
             }
 

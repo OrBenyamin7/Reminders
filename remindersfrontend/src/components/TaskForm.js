@@ -38,8 +38,8 @@ const TaskForm = () => {
 
         const json = await response.json()
 
-        console.log('json file')
-        console.log(json)
+        //console.log('json file')
+        //console.log(json)
 
         if(!response.ok) {
             setError(json.error)
@@ -50,33 +50,39 @@ const TaskForm = () => {
             setDate('')
             setError(null)
             setEmptyFields([])
-            console.log('new task added')
+            //console.log('new task added')
             dispatch({type: 'CREATE_TASK', payload: json})
         }
     }
 
     return (
-        <form className="create" onSubmit={handleSubmit}>
-            <h3>Add a New Task</h3>
+        <div class = "wrapper">
+            <form className="create" onSubmit={handleSubmit}>
+                <h3>Add a New Task</h3>
 
-            <label>Task description</label>
-            <input
-                type="text"
-                onChange={(e) => setDescription(e.target.value)}
-                value={description}
-                className={emptyFields.includes('description') ? 'error' : ''}
-            />
+                <div class="input-box">
+                    <label>Task description</label>
+                    <input
+                        type="text"
+                        onChange={(e) => setDescription(e.target.value)}
+                        value={description}
+                        className={emptyFields.includes('description') ? 'error' : ''}
+                    />
+                </div>
 
-            <label>Task dueDate</label>
-            <input
-                type="Date"
-                onChange={(e) => setDate(e.target.value)}
-                value={due_date}
-            />
+                <div class="input-box">
+                    <label>Task dueDate</label>
+                    <input
+                        type="Date"
+                        onChange={(e) => setDate(e.target.value)}
+                        value={due_date}
+                    />
+                </div>
 
-            <button>Add Task</button>
-            {error && <div className="error">{error}</div>}
-        </form>
+                <button>Add Task</button>
+                {error && <div className="error">{error}</div>}
+            </form>
+        </div>
     )
 }
 

@@ -13,13 +13,40 @@ body {
 }
 
 body.theme-light {
+  /*
   background-color: #f1f1f1;
   color: #333;
+
+  background-image: url("assets/pictures/light.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  */
+  margin: 0;
+  font-family: "Poppins";
+  background-color: #f1f1f1;
+  color: #333;
+  background-image: url("assets/pictures/light.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 body.theme-dark {
+  /*
+  background-image: url("assets/pictures/dark.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #333;
   color: #f1f1f1;
+  */
+  margin: 0;
+  font-family: "Poppins";
+  background-image: url("assets/pictures/dark.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #333;
+  color: #f1f1f1;
+  background-attachment: fixed;
 }
 
 
@@ -36,35 +63,35 @@ header .container {
   justify-content: space-between;
 }
 
-
 body.theme-light header .container {
-  /* CSS styles for the light theme */
-  background-color: #fff;
+  
+  background-color: #a0d5ef;
 }
 
 body.theme-dark header .container {
-  /* CSS styles for the dark theme */
-  background-color: #333;
+  
+  background-color: #1c2448;
   color: #f1f1f1;
 }
 
 
 
 .headLineReminder {
-  background-color: #333;
-  color: #f1f1f1;
+  background-color: #a0d5ef;
+  color: #a0d5ef;
 }
 
 body.theme-light .headLineReminder {
-  /* CSS styles for the light theme */
-  background-color: #ffffff;
+  
+  background-color: #a0d5ef;
   color: #333;
  
 }
 
 body.theme-dark .headLineReminder {
-  /* CSS styles for the dark theme */
-  background-color: #333;
+  
+  /*background-color: #333;*/
+  background-color: #1c2448;
   color: #f1f1f1;
 }
 
@@ -88,7 +115,7 @@ header a {
 }
 
 .task-details {
-  border-radius: 4px;
+  border-radius: 25px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
@@ -97,14 +124,14 @@ header a {
 }
 
 body.theme-dark .task-details {
-  /* CSS styles for the dark theme */
+  
   background-color: #585858;
   color: #f1f1f1;
 }
 
 body.theme-light .task-details {
-  /* CSS styles for the dark theme */
-  background-color: #ffffff;
+  
+  background-color: #e0ebee;
   color: #333;
 }
 
@@ -174,7 +201,7 @@ input.error {
 }
 
 .theme-toggle {
-  position: fixed;
+  position:center;
   top: 20px;
   right: 20px;
 }
@@ -191,7 +218,7 @@ input.error {
 }
 
 .theme-light .formEditTask {
-  /* CSS styles for the dark theme */
+  
   background-color: #ffffff;
   color: #333;
 }
@@ -243,7 +270,7 @@ form.signup, form.login {
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
-  background: #f0eaea;
+  /*background: #f0eaea;*/
   border-radius: 4px;
 }
 nav button {
@@ -282,23 +309,23 @@ form.login {
 
 
 .task-details-past-due {
-  border-radius: 4px;
+  border-radius: 25px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgb(151, 23, 23);
+  box-shadow: 5px 5px 20px rgb(151, 23, 23);
   border: 2px solid var(--border-color);
 }
 
 body.theme-dark .task-details-past-due {
-  /* CSS styles for the dark theme */
+  
   background-color: #585858;
   color: #f1f1f1;
 }
 
 body.theme-light .task-details-past-due {
-  /* CSS styles for the dark theme */
-  background-color: #ffffff;
+  
+  background-color: #e0ebee;
   color: #333;
 }
 
@@ -337,7 +364,7 @@ body.theme-light .task-details-past-due {
 }
 
 .theme-light .priority-input select {
-  /* CSS styles for the dark theme */
+  
   background-color: #ffffff;
   color: #333;
 }
@@ -352,18 +379,17 @@ header .containerCategory {
   align-items: center;
   justify-content: space-between;
   margin-top: 15px; 
+  
 }
 
 
 body.theme-light header .containerCategory {
-  /* CSS styles for the light theme */
-  background-color: #c0c0c0;
+  background-color: #badff1;
 }
 
 body.theme-dark header .containerCategory {
-  /* CSS styles for the dark theme */
   background-color: #333;
-  color: #f1f1f1;
+  
 }
 
 .headLineCategory {
@@ -373,18 +399,18 @@ body.theme-dark header .containerCategory {
   color: #fff;
   padding: 5px;
   font-family: "Poppins";
-  border-radius: 4px;
+  /*border-radius: 10px;*/
   cursor: pointer;
 }
 
 body.theme-light .headLineCategory {
-  /* CSS styles for the light theme */
-  background-color: #c0c0c0;
+  
+  background-color: #badff1;
   color: #333;
 }
 
 body.theme-dark .headLineCategory {
-  /* CSS styles for the dark theme */
+  
   background-color: #333;
   color: #f1f1f1;
 }
@@ -394,6 +420,22 @@ body.theme-dark .headLineCategory {
   cursor: pointer;
 }
 
+body.theme-dark .material-symbols-outlined {
+  color: #f1f1f1;
+}
+
+body.theme-light .material-symbols-outlined {
+  color: #000000;
+}
+
+body.theme-dark .task-details span {
+  color: #000000;
+}
+
+body.theme-dark .task-details-past-due span {
+  color: #000000;
+}
+
 
 .shareTaskInput {
   display: flex;
@@ -401,5 +443,41 @@ body.theme-dark .headLineCategory {
   margin-bottom: 20px; 
 }
 
+.wrapper {
+  /*position: center;
+  width: 400px;
+  height: 440px;*/
+  background: transparent;
+  border: 2px solid rgba(225, 225, 225, 5);
 
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(40px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+body.theme-light .wrapper h3 {
+  font-size: 2em;
+  color: #162938;
+  text-align: center;
+}
+
+body.theme-dark .wrapper h3 {
+  font-size: 2em;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+.input-box {
+  position: relative;
+  margin: 30px 0;
+}
+
+.logInButton {
+  position:relative;
+}
