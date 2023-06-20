@@ -1,13 +1,13 @@
-import { BrowserRouter, Routes, Route,Navigate } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+import { BrowserRouter, Routes, Route,Navigate } from 'react-router-dom'
+import { Container } from 'react-bootstrap'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
 import { useAuthContext } from './hooks/useAuthContext'
 
 
 // Pages & components
-import Home from './pages/Home';
-import Navbar from './components/Navbar';
+import Home from './pages/Home'
+import Navbar from './components/Navbar'
 import Category from './components/Category'
 
 
@@ -45,4 +45,4 @@ function App() {
 
    }
 
-export default App;
+export default App

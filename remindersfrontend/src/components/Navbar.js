@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import { useLogout } from '../hooks/useLogut'
 import { useAuthContext } from '../hooks/useAuthContext'
 
-import { Button } from 'react-bootstrap';
-import { MdWbSunny, MdNightsStay } from 'react-icons/md';
-import { useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap'
+import { MdWbSunny, MdNightsStay } from 'react-icons/md'
+import { useEffect, useState } from 'react'
 
 
 const Navbar = () => {
@@ -16,19 +16,19 @@ const Navbar = () => {
 
     }
 
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('light')
 
     const toggleTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
+        const newTheme = theme === 'light' ? 'dark' : 'light'
+        setTheme(newTheme)
         
     };
 
     useEffect(() => {
-        const body = document.body;
-        body.classList.remove('theme-light', 'theme-dark');
-        body.classList.add(`theme-${theme}`);
-    }, [theme]);
+        const body = document.body
+        body.classList.remove('theme-light', 'theme-dark')
+        body.classList.add(`theme-${theme}`)
+    }, [theme])
 
     return (
         <header>

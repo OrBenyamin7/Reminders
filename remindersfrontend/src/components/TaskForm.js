@@ -38,8 +38,8 @@ const TaskForm = () => {
 
         const json = await response.json()
 
-        console.log('json file')
-        console.log(json)
+        //console.log('json file')
+        //console.log(json)
 
         if(!response.ok) {
             setError(json.error)
@@ -50,7 +50,7 @@ const TaskForm = () => {
             setDate('')
             setError(null)
             setEmptyFields([])
-            console.log('new task added')
+            //console.log('new task added')
             dispatch({type: 'CREATE_TASK', payload: json})
         }
     }
