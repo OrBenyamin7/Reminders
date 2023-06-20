@@ -8,7 +8,8 @@ const TaskEdit = ({ task, onClose }) => {
   const [editedDescription, setEditedDescription] = useState(task.description)
   const [editedDueDate, setEditedDueDate] = useState(task.due_date)
   const [editedPriority, setEditedPriority] = useState(task.priority)
-  const [editedSharedEmail, setSecondEmail] = useState(task.secondUserEmail);
+  const [editedSharedEmail, setSecondEmail] = useState(task.secondUserEmail)
+
 
 
   const { dispatch } = useTasksContext()
@@ -28,6 +29,11 @@ const TaskEdit = ({ task, onClose }) => {
   }
 
   const handleSave = async () => {
+
+    if (editedDescription.trim() === '') {
+      console.error('Description cannot be empty')
+      return;
+    }
 
     const response = await fetch('/api/tasks/' + task._id, {
       method: 'PATCH',
@@ -83,6 +89,8 @@ const TaskEdit = ({ task, onClose }) => {
         console.error('Failed to delete the task')
     }
 }
+const today = new Date().toISOString().split('T')[0]
+
 
   return (
     <div className="modal-overlay">
@@ -102,6 +110,7 @@ const TaskEdit = ({ task, onClose }) => {
             type="Date"
             defaultValue={editedDueDate ? editedDueDate.slice(0, 10) : ''}
             onChange={handleChangeDueDate}
+            min={today}
           />
         </div>
 

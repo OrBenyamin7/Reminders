@@ -48,19 +48,21 @@ const TaskForm = () => {
         if(response.ok) {
             setDescription('')
             setDate('')
-            setError(null)
+            setError('')
             setEmptyFields([])
             //console.log('new task added')
             dispatch({type: 'CREATE_TASK', payload: json})
         }
     }
 
+    const today = new Date().toISOString().split('T')[0]
+
     return (
-        <div class = "wrapper">
+        <div className = "wrapper">
             <form className="create" onSubmit={handleSubmit}>
                 <h3>Add a New Task</h3>
 
-                <div class="input-box">
+                <div className="input-box">
                     <label>Task description</label>
                     <input
                         type="text"
@@ -70,12 +72,13 @@ const TaskForm = () => {
                     />
                 </div>
 
-                <div class="input-box">
+                <div className="input-box">
                     <label>Task dueDate</label>
                     <input
                         type="Date"
                         onChange={(e) => setDate(e.target.value)}
                         value={due_date}
+                        min={today}
                     />
                 </div>
 
