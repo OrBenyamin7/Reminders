@@ -1,4 +1,4 @@
-import path from "path";
+//import path from "path";
 import { fileURLToPath } from "url";
 require('dotenv').config()
 
@@ -8,15 +8,12 @@ require('dotenv').config()
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
+const path = require("path");
 
 const PORT = process.env.PORT || 4000;
 dotenv.config();
 // dotenv.config({ path: path.join(__dirname, ".env") });
 //dotenv.config({ path: '../server/.env' });
-
-//express app
-const app = express()
 
 
 app.use(express.json());
@@ -82,7 +79,7 @@ const reminderRoutes = require('./routes/tasks')
 const userrRoutes = require('./routes/user')
 
 //express app
-//const app = express()
+const app = express()
 
 
 //middleware
