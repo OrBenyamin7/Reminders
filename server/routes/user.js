@@ -6,9 +6,9 @@ const { loginUser, signupUser } = require('../controllers/userController')
 const router = express.Router()
 
 // login route
-router.post('https://reminders-km7j.onrender.com/login', loginUser)
+router.post('/login', loginUser)
 
 // signup route
-router.post('https://reminders-km7j.onrender.com/signup', signupUser)
+router.post('/signup', signupUser)
 
 module.exports = router
