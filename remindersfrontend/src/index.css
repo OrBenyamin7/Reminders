@@ -379,7 +379,6 @@ header .containerCategory {
   align-items: center;
   justify-content: space-between;
   margin-top: 15px; 
-  border-radius: 15px; 
   
 }
 
@@ -400,7 +399,7 @@ body.theme-dark header .containerCategory {
   color: #fff;
   padding: 5px;
   font-family: "Poppins";
-  border-radius: 10px;
+  /*border-radius: 10px;*/
   cursor: pointer;
 }
 
@@ -482,6 +481,11 @@ body.theme-dark .wrapper h3 {
 .logInButton {
   position:relative;
 }
+
+
+
+
+
 
 
 
