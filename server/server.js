@@ -1,4 +1,72 @@
+import path from "path";
+import { fileURLToPath } from "url";
 require('dotenv').config()
+
+//
+
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
+const PORT = process.env.PORT || 4000;
+dotenv.config();
+// dotenv.config({ path: path.join(__dirname, ".env") });
+//dotenv.config({ path: '../server/.env' });
+
+
+app.use(express.json());
+app.use((req, res, next) => {
+  res.setHeader("Cross-Origin-Opener-Policy", "*");
+  next();
+});
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+  );
+  next();
+});
+
+
+app.use((req, res, next) => {
+  if (!req.url.endsWith(".js") && !req.url.endsWith(".css")) {
+    res.type("text/html");
+  }
+  next();
+});
+app.use((req, res, next) => {
+  if (req.url.endsWith(".js")) {
+    res.type("text/javascript");
+  }
+  next();
+});
+
+app.use(
+  "/assets",
+  express.static(path.join(__dirname, "..", "..", "remindersfrontend", "dist", "assets"))
+);
+app.use(express.static(path.join(__dirname, "..", "remindersfrontend", "dist")));
+
+app.get("/index-*.js", function (req, res) {
+  res.type("application/javascript");
+  res.sendFile(
+    path.join(__dirname, "..", "remindersfrontend", "dist", "assets", req.path)
+  );
+});
+//
+
+
+
+
+
 
 const express = require('express')
 const mongoose = require('mongoose')
