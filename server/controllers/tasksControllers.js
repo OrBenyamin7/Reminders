@@ -13,7 +13,6 @@ const getUserTasks = async (req, res) => {
 
 
 const getUserSharedTasks = async (req, res) => {
-    console.log('hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeer')
 
     const { mail } = req.params
 

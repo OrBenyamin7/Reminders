@@ -35,7 +35,7 @@ const TaskEdit = ({ task, onClose }) => {
       return;
     }
 
-    const response = await fetch('/api/tasks/' + task._id, {
+    const response = await fetch('https://reminders-km7j.onrender.com/api/tasks/' + task._id, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const TaskEdit = ({ task, onClose }) => {
     })
 
     const userId = user.userId
-      const secondResponse = await fetch('/api/tasks/' + userId, {
+      const secondResponse = await fetch('https://reminders-km7j.onrender.com/api/tasks/' + userId, {
         headers: {'Authorization': `Bearer ${user.token}`},
       })
       const secondJson = await secondResponse.json()
@@ -72,7 +72,7 @@ const TaskEdit = ({ task, onClose }) => {
 }
 
   const handleDelete = async () => {
-    const response = await fetch('/api/tasks/' + task._id, {
+    const response = await fetch('https://reminders-km7j.onrender.com/api/tasks/' + task._id, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${user.token}`

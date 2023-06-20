@@ -27,7 +27,7 @@ const TaskForm = () => {
         const sync_myTask = false
         const task = {description, due_date, reminde_me, sync_myTask, userId}
 
-        const response = await fetch('/api/tasks', {
+        const response = await fetch('https://reminders-km7j.onrender.com/api/tasks', {
             method: 'POST',
             body: JSON.stringify(task),
             headers: {

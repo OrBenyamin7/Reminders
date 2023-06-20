@@ -8,7 +8,7 @@ const Category = () => {
 
     const chooseAll = async () => {
         const userId = user.userId
-        const response = await fetch('/api/tasks/' + userId, {
+        const response = await fetch('https://reminders-km7j.onrender.com/api/tasks/' + userId, {
             headers: {'Authorization': `Bearer ${user.token}`},
         })
         const json = await response.json()
@@ -19,7 +19,7 @@ const Category = () => {
         const userEmail = user.email
         console.log(userEmail)
         console.log('here in choose shared')
-        const response = await fetch('/api/tasks/shareTask/' + userEmail, {
+        const response = await fetch('https://reminders-km7j.onrender.com/api/tasks/shareTask/' + userEmail, {
             headers: {'Authorization': `Bearer ${user.token}`},
         })
         console.log('here2')
@@ -34,7 +34,7 @@ const Category = () => {
 
     const chooseDueDate = async () => {
         const userId = user.userId
-        const response = await fetch('/api/tasks/' + userId, {
+        const response = await fetch('https://reminders-km7j.onrender.com/api/tasks/' + userId, {
             headers: {'Authorization': `Bearer ${user.token}`},
         })
         const json = await response.json()
@@ -45,7 +45,7 @@ const Category = () => {
 
     const choosePriority = async () => {
         const userId = user.userId
-        const response = await fetch('/api/tasks/' + userId, {
+        const response = await fetch('https://reminders-km7j.onrender.com/api/tasks/' + userId, {
             headers: {'Authorization': `Bearer ${user.token}`},
         })
         const json = await response.json()

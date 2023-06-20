@@ -16,31 +16,31 @@ const router = express.Router()
 router.use(requireAuth)
 
 //GET All Reminders of single user
-router.get('/:userId',getUserTasks)
+router.get('https://reminders-km7j.onrender.com/:userId',getUserTasks)
 
 
 
 
 //GET All Reminders that shared with the user
-router.get('/shareTask/:mail',getUserSharedTasks)
+router.get('https://reminders-km7j.onrender.com/shareTask/:mail',getUserSharedTasks)
 
 
 
 
 //GET All Reminders
-router.get('/',getTasks)
+router.get('https://reminders-km7j.onrender.com/',getTasks)
 
 //GET a single workout
-router.get('/:id',getTask)
+router.get('https://reminders-km7j.onrender.com/:id',getTask)
 
 //POST a new Reminder
-router.post('/',createTask)
+router.post('https://reminders-km7j.onrender.com/',createTask)
 
 //DELETE Reminder
-router.delete('/:id',deleteTask)
+router.delete('https://reminders-km7j.onrender.com/:id',deleteTask)
 
 //UPDATE a Reminder
-router.patch('/:id',updateTask)
+router.patch('https://reminders-km7j.onrender.com/:id',updateTask)
 
 
 
