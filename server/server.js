@@ -15,6 +15,9 @@ dotenv.config();
 // dotenv.config({ path: path.join(__dirname, ".env") });
 //dotenv.config({ path: '../server/.env' });
 
+//express app
+const app = express()
+
 
 app.use(express.json());
 app.use((req, res, next) => {
@@ -79,7 +82,7 @@ const reminderRoutes = require('./routes/tasks')
 const userrRoutes = require('./routes/user')
 
 //express app
-const app = express()
+//const app = express()
 
 
 //middleware
