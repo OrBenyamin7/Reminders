@@ -35,7 +35,7 @@ app.use((req, res, next) => {
   next();
 });
 
-/*
+
 app.use((req, res, next) => {
   if (!req.url.endsWith(".js") && !req.url.endsWith(".css")) {
     res.type("text/html");
@@ -54,16 +54,16 @@ app.use(
   express.static(path.join(__dirname, "..", "..", "remindersfrontend", "dist", "assets"))
 );
 app.use(express.static(path.join(__dirname, "..", "remindersfrontend", "dist")));
-*/
 
-/*
+
+
 app.get("/index-*.js", function (req, res) {
   res.type("application/javascript");
   res.sendFile(
-    path.join(__dirname, "..", "remindersfrontend", "dist", "assets", req.path)
+    path.join(__dirname, "..", "remindersfrontend", "src", "assets", req.path)
   );
 });
-*/
+
 
 
 //
