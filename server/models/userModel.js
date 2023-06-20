@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
+const bcryptjs = require('bcryptjs')
 const validator = require('validator')
 const Schema = mongoose.Schema
 
@@ -41,9 +41,9 @@ const exists = await this.findOne({email})
         throw Error('Sorry, this Email already in use ')
     }
 
-    const salt = await bcrypt.genSalt(10)
+    const salt = await bcryptjs.genSalt(10)
     //bycrpt hash our password
-    const hash = await bcrypt.hash(password,salt)
+    const hash = await bcryptjs.hash(password,salt)
     //create the doc forus
     const user = await this.create({email,name,password: hash})
     return user
@@ -63,7 +63,7 @@ const user = await this.findOne({email})
         throw Error('Incorrect Email!')
     }
 
-    const match = await bcrypt.compare(password,user.password) //hash password =user.password
+    const match = await bcryptjs.compare(password,user.password) //hash password =user.password
     
     if(!match){
         throw Error('Incorrect password')
