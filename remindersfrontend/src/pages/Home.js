@@ -14,7 +14,7 @@ const Home = ({ theme }) => {
   useEffect(() => {
     const fetchTasks = async () => {
       const userId = user.userId
-      const response = await fetch('https://reminders-km7j.onrender.com/api/tasks/' + userId, {
+      const response = await fetch('/api/tasks/' + userId, {
         headers: {'Authorization': `Bearer ${user.token}`},
       })
       const json = await response.json()
