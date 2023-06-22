@@ -83,7 +83,7 @@ const TaskEdit = ({ task, onClose }) => {
 
     if (response.ok) {
         dispatch({type: 'DELETE_TASK', payload: json})
-        console.log('task was delete')
+        //console.log('task was delete')
     }
     else{
         console.error('Failed to delete the task')
