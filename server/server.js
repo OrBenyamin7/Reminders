@@ -43,19 +43,28 @@ app.use((req, res, next) => {
 });
 
 app.use(
-  "/assets",
-  express.static(
-    path.join(correntdirname, "..", "..", "remindersfrontend", "dist", "assets")
-  )
-);
-app.use(express.static(path.join(correntdirname, "..", "..", "remindersfrontend", "dist")));
-
-app.get("/index-*.js", function (req, res) {
-  res.type("application/javascript");
-  res.sendFile(
-    path.join(correntdirname, "..", "..", "remindersfrontend", "dist", "assets", req.path)
+    '/assets',
+    express.static(
+      path.join(__dirname, '..', 'remindersfrontend', 'build', 'assets')
+    )
   );
-});
+  app.use(
+    express.static(path.join(__dirname, '..', 'remindersfrontend', 'build'))
+  );
+  
+  app.get('/index-*.js', function (req, res) {
+    res.type('application/javascript');
+    res.sendFile(
+      path.join(
+        __dirname,
+        '..',
+        'remindersfrontend',
+        'build',
+        'assets',
+        req.path
+      )
+    );
+  });
 
 
 
@@ -101,16 +110,15 @@ mongoose.connect(process.env.MONGO_URI)
     })
 
 
-    app.get("*", (req, res) => {
+    app.get('*', (req, res) => {
         const filePath = path.join(
           __dirname,
-          "..",
-          "..",
-          "remindersfrontend",
-          "dist",
-          "index.html"
+          '..',
+          'remindersfrontend',
+          'build',
+          'index.html'
         );
-        console.log("File path:", filePath);
+        console.log('File path:', filePath);
         res.sendFile(filePath);
       });
     
